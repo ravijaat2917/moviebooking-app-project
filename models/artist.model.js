@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const artistschema = mongoose.Schema({
+const artistschema = new mongoose.Schema({
     artistid:{
         artistid:{
             type:Number,
@@ -13,8 +13,14 @@ const artistschema = mongoose.Schema({
             type:String,
             required:true,
         },
-        // wiki_url:`https://en.wikipedia.org/wiki/${first_name}_${last_name}`,
-        // profile_url:`https://upload.wikimedia.org/wikipedia/commons/a/ac/${first_name}_${last_name}.jpg`,
+        wiki_url:{
+            type:String,
+            required:true
+        },
+        profile_url:{
+            type:String,
+            required:true
+        },
         movies:[],
     }
 });
