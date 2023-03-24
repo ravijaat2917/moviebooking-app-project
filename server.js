@@ -1,6 +1,7 @@
 import express from'express' ; const app = express();
 import mongoose from 'mongoose';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import dbconfig from'./config/db.config.js';
 import {artistModel , genreModel , movieModel , userModel} from './models/index.js';
 const port = dbconfig.port;
@@ -13,6 +14,8 @@ import genres from './routes/genre.routes.js';
 import movies from './routes/movie.routes.js';
 import users from './routes/user.routes.js';
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors());
 
 app.get("/", (req, res) => {
