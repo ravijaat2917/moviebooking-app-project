@@ -1,7 +1,17 @@
 import express from 'express';
 const router = express.Router();
-import movieController from'../controllers/movie.controller.js';
+import {findAllMovies, findOne, rootPath} from'../controllers/movie.controller.js';
 
-router.get('/movies' , movieController);
+// Route to routePath
+router.get('/' , rootPath);
+
+
+// Route to get all the movies
+router.get('/movies' , findAllMovies );
+
+
+// Route to get by movieID
+router.get('/movies/:movieID' , findOne);
+
 
 export default router;

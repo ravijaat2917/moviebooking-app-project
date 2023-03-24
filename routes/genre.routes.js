@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
-import genreController from '../controllers/genre.controller.js';
+import findAllGenres from '../controllers/genre.controller.js';
 
-router.get('/genres' , genreController);
+router.get('/genres' , findAllGenres);
 
 export default router;
