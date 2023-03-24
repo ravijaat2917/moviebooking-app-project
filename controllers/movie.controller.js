@@ -1,4 +1,4 @@
-import {movieModel} from '../server.js';
+import { movieModel } from "../server.js";
 
 // Route to rootPath
 const rootPath = (req, res) => {
@@ -25,13 +25,13 @@ const findAllMovies = async (req, res) => {
     res.send(Movie);
   } else if (status == "RELEASED") {
     // console.log(req.query.title);
-    if(req.query.title == undefined){
+    if (req.query.title == undefined) {
       let filter = {
         released: true,
       };
       let Movie = await movieModel.find(filter);
       res.send(Movie);
-    }else{
+    } else {
       let details = req.query;
       let Movie = await movieModel.find(details);
       res.send(Movie);
