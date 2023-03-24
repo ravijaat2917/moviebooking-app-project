@@ -1,4 +1,4 @@
-import userModel from '../server.js';
+import {userModel} from '../server.js';
 
 const signUp = async (req,res) =>{
     let data = req.body ;

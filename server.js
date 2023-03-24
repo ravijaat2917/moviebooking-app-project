@@ -23,10 +23,10 @@ app.get("/", (req, res) => {
 });
 
 // Make routes in working
-app.use('/',artists);
-app.use('/',genres);
-app.use('/',movies);
-// app.use('/',users);
+app.use('/api',artists);
+app.use('/api',genres);
+app.use('/api',movies);
+app.use('/api',users);
   
 
 mongoose
@@ -47,4 +47,4 @@ app.listen(port , () => {
     console.log(`Server listening at  http://localhost:${port}`);
 });
 
-export {artistModel , genreModel , movieModel , userModel};
+export  {artistModel , genreModel , movieModel , userModel};

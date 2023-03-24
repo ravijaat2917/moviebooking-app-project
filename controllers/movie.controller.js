@@ -14,9 +14,9 @@ const findAllMovies = async (req, res) => {
     var status = Query.toUpperCase();
   }
   if (Query == undefined) {
-    // let Movies = await movieModel.find();
-    // res.send(Movies);
-    res.json({ message: "Welcome to Upgrad Movie booking application development." });
+    let Movies = await movieModel.find();
+    res.send(Movies);
+    // res.json({ message: "Welcome to Upgrad Movie booking application development." });
   } else if (status == "PUBLISHED") {
     let filter = {
       published: true,
